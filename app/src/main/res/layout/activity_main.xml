@@ -84,6 +84,7 @@
                         android:background="@android:color/white"
                         android:ems="10"
                         android:inputType="textPersonName|textCapWords"
+                        android:selectAllOnFocus="true"
                         android:text="Admin Sebelah"
                         android:textColor="@android:color/black"
                         android:textSize="@dimen/_9sdp"
@@ -96,6 +97,7 @@
                         android:background="@android:color/white"
                         android:ems="10"
                         android:inputType="textPersonName"
+                        android:selectAllOnFocus="true"
                         android:text="5 juli 2019"
                         android:textSize="@dimen/_9sdp" />
                 </LinearLayout>
@@ -173,6 +175,12 @@
                 android:layout_weight="1"
                 android:text="Share" />
         </LinearLayout>
+
+        <Button
+            android:id="@+id/btnFolder"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Buka Folder" />
     </LinearLayout>
 
 </ScrollView>

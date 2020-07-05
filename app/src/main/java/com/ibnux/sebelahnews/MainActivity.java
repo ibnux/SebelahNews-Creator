@@ -27,6 +27,7 @@ import android.os.Build;
 import android.os.Bundle;
 import android.os.Environment;
 import android.os.Parcelable;
+import android.provider.DocumentsContract;
 import android.provider.MediaStore;
 import android.system.ErrnoException;
 import android.text.InputType;
@@ -58,7 +59,7 @@ import java.util.List;
 public class MainActivity extends AppCompatActivity implements View.OnClickListener, View.OnLongClickListener {
     ImageView imgAuthor, imgPilihan;
     EditText txtAuthor, txtTgl, txtDisklaimer,txtJudul,txtCerita;
-    Button btnShare, btnSave;
+    Button btnShare, btnSave,btnFolder;
     LinearLayout layoutberita;
     String folderName = "sebelahNews";
     int author = 0;
@@ -78,6 +79,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         txtDisklaimer = findViewById(R.id.txtDisklaimer);
         txtJudul = findViewById(R.id.txtJudul);
         txtCerita = findViewById(R.id.txtCerita);
+        btnFolder = findViewById(R.id.btnFolder);
 
         SharedPreferences sp = getSharedPreferences("pengaturan",0);
         txtAuthor.setText(sp.getString("author","Admin Sebelah"));
@@ -91,7 +93,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         btnSave.setOnClickListener(this);
         imgAuthor.setOnClickListener(this);
         imgPilihan.setOnClickListener(this);
-
+        btnFolder.setOnClickListener(this);
         txtJudul.setOnLongClickListener(this);
         txtCerita.setOnLongClickListener(this);
 
@@ -133,6 +135,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             }
         } else if (v == imgPilihan) {
             ImagePicker.Companion.with(this).start(222);
+        }else if(v==btnFolder){
+            openFolder();
         }
     }
 
@@ -166,13 +170,30 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     }
 
-    public void openFolder()
-    {
-        // location = "/sdcard/my_folder";
-        Intent intent = new Intent(Intent.ACTION_VIEW);
-        Uri mydir = Uri.parse("file://"+new File(getExternalFilesDir(Environment.DIRECTORY_PICTURES), folderName).getPath());
-        intent.setDataAndType(mydir,"application/*");    // or use */*
-        startActivity(intent);
+    public void openFolder(){
+        String path = "file://" + new File(getExternalFilesDir(Environment.DIRECTORY_PICTURES), folderName).getPath();
+        Log.i("TAG", path);
+        Uri mydir = Uri.parse(path);
+        try {
+            Intent intent = new Intent(Intent.ACTION_VIEW);
+            intent.setDataAndType(mydir, "resource/folder");
+            startActivity(intent);
+        }catch (Exception e1){
+            try {
+                Intent intent = new Intent(Intent.ACTION_VIEW);
+                intent.setDataAndType(mydir,
+                        DocumentsContract.Document.MIME_TYPE_DIR);
+                startActivity(intent);
+            }catch (Exception e2){
+                try{
+                    Intent intent = new Intent(Intent.ACTION_VIEW);
+                    intent.setDataAndType(mydir,"*/*");
+                    startActivity(intent);
+                }catch (Exception e3){
+                    Toast.makeText(this, "Tidak ada aplikasi yang bisa buka folder", Toast.LENGTH_SHORT).show();
+                }
+            }
+        }
     }
 
     public void resizeFont(final EditText editText){
