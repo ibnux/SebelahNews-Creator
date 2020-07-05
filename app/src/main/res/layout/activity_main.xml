@@ -181,6 +181,14 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Buka Folder" />
+
+        <TextView
+            android:id="@+id/textView4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Klik tahan untuk ganti ukuran font"
+            android:textAlignment="center"
+            android:textSize="@dimen/_10sdp" />
     </LinearLayout>
 
 </ScrollView>

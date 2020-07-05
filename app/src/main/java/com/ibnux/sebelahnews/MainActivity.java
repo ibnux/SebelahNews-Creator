@@ -68,6 +68,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setTitle(getString(R.string.title));
         setContentView(R.layout.activity_main);
         imgAuthor = findViewById(R.id.imgAuthor);
         imgPilihan = findViewById(R.id.imgPilihan);
