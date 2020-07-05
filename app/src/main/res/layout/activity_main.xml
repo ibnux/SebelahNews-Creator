@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -8,159 +8,171 @@
     tools:context=".MainActivity">
 
     <LinearLayout
-        android:id="@+id/layoutberita"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
+        android:gravity="center"
         android:orientation="vertical">
 
         <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="@android:color/black"
-            android:gravity="center_horizontal"
-            android:orientation="vertical"
-            android:padding="@dimen/_2sdp">
-
-            <ImageView
-                android:id="@+id/imageView"
-                android:layout_width="@dimen/_150sdp"
-                android:layout_height="wrap_content"
-                android:adjustViewBounds="true"
-                app:srcCompat="@drawable/sebelah_news" />
-
-            <TextView
-                android:id="@+id/textView"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/helveticaneue_normal"
-                android:text="Dari Grup Sebelah untuk Grup Sebelahnya"
-                android:textColor="@android:color/white"
-                android:textSize="@dimen/_8ssp" />
-        </LinearLayout>
-
-        <EditText
-            android:id="@+id/editTextTextMultiLine"
+            android:id="@+id/layoutberita"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@android:color/white"
-            android:ems="10"
-            android:fontFamily="@font/montserrat_bold"
-            android:gravity="start|top"
-            android:inputType="textMultiLine|textCapSentences"
-            android:text="sebuah Judul"
-            android:textSize="@dimen/_20sdp"
-            android:textStyle="bold" />
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginTop="@dimen/_4sdp"
-            android:orientation="horizontal"
-            android:padding="@dimen/_2sdp">
-
-            <ImageView
-                android:id="@+id/imgAuthor"
-                android:layout_width="@dimen/_24sdp"
-                android:layout_height="@dimen/_24sdp"
-                tools:srcCompat="@drawable/cewek" />
+            android:orientation="vertical">
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:orientation="vertical">
+                android:background="@android:color/black"
+                android:gravity="center_horizontal"
+                android:orientation="vertical"
+                android:padding="@dimen/_2sdp">
 
-                <EditText
-                    android:id="@+id/txtAuthor"
+                <ImageView
+                    android:id="@+id/imageView"
+                    android:layout_width="@dimen/_150sdp"
+                    android:layout_height="wrap_content"
+                    android:adjustViewBounds="true"
+                    app:srcCompat="@drawable/sebelah_news" />
+
+                <TextView
+                    android:id="@+id/textView"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:background="@android:color/white"
-                    android:ems="10"
-                    android:inputType="textPersonName|textCapWords"
-                    android:text="Admin Sebelah"
-                    android:textColor="@android:color/black"
-                    android:textSize="@dimen/_9sdp"
-                    android:textStyle="bold" />
+                    android:fontFamily="@font/helveticaneue_normal"
+                    android:text="Dari Grup Sebelah untuk Grup Sebelahnya"
+                    android:textColor="@android:color/white"
+                    android:textSize="@dimen/_8ssp" />
+            </LinearLayout>
 
-                <EditText
-                    android:id="@+id/txtTgl"
+            <EditText
+                android:id="@+id/txtJudul"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@android:color/white"
+                android:ems="10"
+                android:fontFamily="@font/montserrat_bold"
+                android:gravity="start|top"
+                android:inputType="textMultiLine|textCapSentences"
+                android:selectAllOnFocus="true"
+                android:text="Takut mobil dicuri, seorang pengendara membawa Stir mobilnya"
+                android:textAlignment="textStart"
+                android:textSize="@dimen/_18sdp"
+                android:textStyle="bold" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="@dimen/_4sdp"
+                android:orientation="horizontal"
+                android:padding="@dimen/_2sdp">
+
+                <ImageView
+                    android:id="@+id/imgAuthor"
+                    android:layout_width="@dimen/_24sdp"
+                    android:layout_height="@dimen/_24sdp"
+                    app:srcCompat="@drawable/cowok" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <EditText
+                        android:id="@+id/txtAuthor"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@android:color/white"
+                        android:ems="10"
+                        android:inputType="textPersonName|textCapWords"
+                        android:text="Admin Sebelah"
+                        android:textColor="@android:color/black"
+                        android:textSize="@dimen/_9sdp"
+                        android:textStyle="bold" />
+
+                    <EditText
+                        android:id="@+id/txtTgl"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@android:color/white"
+                        android:ems="10"
+                        android:inputType="textPersonName"
+                        android:text="5 juli 2019"
+                        android:textSize="@dimen/_9sdp" />
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <ImageView
+                    android:id="@+id/imgPilihan"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:background="@android:color/white"
-                    android:ems="10"
-                    android:inputType="textPersonName"
-                    android:text="5 juli 2019"
-                    android:textSize="@dimen/_9sdp" />
-            </LinearLayout>
+                    android:adjustViewBounds="true"
+                    android:cropToPadding="true"
+                    app:srcCompat="@drawable/mr_bean" />
+
+                <ImageView
+                    android:id="@+id/imageView4"
+                    android:layout_width="@dimen/_32sdp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom"
+                    android:layout_margin="4dp"
+                    android:adjustViewBounds="true"
+                    android:alpha="0.5"
+                    app:srcCompat="@drawable/sebelah_logo" />
+            </FrameLayout>
+
+            <EditText
+                android:id="@+id/txtDisklaimer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@android:color/white"
+                android:ems="10"
+                android:fontFamily="sans-serif-light"
+                android:gravity="start|top"
+                android:inputType="textMultiLine"
+                android:selectAllOnFocus="true"
+                android:text="*Gambar hanyalah ilustrasi semata, sangat tolol jika dipercaya"
+                android:textSize="@dimen/_7ssp" />
+
+            <EditText
+                android:id="@+id/txtCerita"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_4sdp"
+                android:background="@android:color/white"
+                android:ems="10"
+                android:fontFamily="@font/montserrat_regular"
+                android:gravity="start|top"
+                android:inputType="textMultiLine"
+                android:selectAllOnFocus="true"
+                android:text="Sangat mengejutkan, seorang anak manusia takut kehilangan mobilnya, selain mengunci mobilnya, beliau membawa serta stir mobilnya, oleh karena itu akan sulit mencuri mobilnya" />
 
         </LinearLayout>
 
-        <FrameLayout
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:orientation="horizontal">
 
-            <ImageView
-                android:id="@+id/imgPilihan"
-                android:layout_width="match_parent"
+            <Button
+                android:id="@+id/btnSave"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:adjustViewBounds="true"
-                android:cropToPadding="true"
-                tools:srcCompat="@drawable/mr_bean" />
+                android:layout_weight="1"
+                android:text="Save" />
 
-            <ImageView
-                android:id="@+id/imageView4"
-                android:layout_width="@dimen/_32sdp"
+            <Button
+                android:id="@+id/btnShare"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_gravity="bottom"
-                android:layout_margin="4dp"
-                android:adjustViewBounds="true"
-                android:alpha="0.5"
-                app:srcCompat="@drawable/sebelah_logo" />
-        </FrameLayout>
-
-        <EditText
-            android:id="@+id/txtDisklaimer"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@android:color/white"
-            android:ems="10"
-            android:fontFamily="sans-serif-light"
-            android:gravity="start|top"
-            android:inputType="textMultiLine"
-            android:text="*Gambar hanyalah ilustrasi semata, sangat tolol jika dipercaya"
-            android:textSize="@dimen/_7ssp" />
-
-        <EditText
-            android:id="@+id/editTextTextMultiLine3"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/_4sdp"
-            android:background="@android:color/white"
-            android:ems="10"
-            android:fontFamily="@font/montserrat_regular"
-            android:gravity="start|top"
-            android:inputType="textMultiLine"
-            android:text="Ceritakan sebuah cerita" />
-
+                android:layout_weight="1"
+                android:text="Share" />
+        </LinearLayout>
     </LinearLayout>
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="horizontal">
-
-        <Button
-            android:id="@+id/btnSave"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="Save" />
-
-        <Button
-            android:id="@+id/btnShare"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="Share" />
-    </LinearLayout>
-
-</LinearLayout>
+</ScrollView>
